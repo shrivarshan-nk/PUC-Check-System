@@ -1,0 +1,109 @@
+{
+  "system": {
+    "name": "PUC Check System",
+    "version": "1.0",
+    "phase": "Phase 1 - ANPR + PUC Verification",
+    "description": "Automated Pollution Under Control verification system using YOLO and EasyOCR"
+  },
+  "detection": {
+    "model": {
+      "type": "YOLOv8",
+      "variant": "nano",
+      "confidence_threshold": 0.5,
+      "notes": "For production, use yolov8s or yolov8m for better accuracy"
+    },
+    "ocr": {
+      "engine": "EasyOCR",
+      "languages": ["en"],
+      "gpu_enabled": false,
+      "notes": "Set to true if CUDA-capable GPU is available"
+    },
+    "camera": {
+      "default_device_id": 0,
+      "default_timeout_seconds": 10,
+      "fps": 30
+    }
+  },
+  "database": {
+    "path": "data/puc_database.json",
+    "type": "JSON",
+    "total_vehicles": 10,
+    "backup_enabled": false
+  },
+  "grace_period": {
+    "default_days": 0,
+    "max_allowed_days": 30,
+    "purpose": "Allow vehicles to renew PUC without immediate penalty"
+  },
+  "output_formats": {
+    "plate_detection": {
+      "bounding_box": "x1, y1, x2, y2 coordinates",
+      "detected_text": "Extracted number plate text",
+      "confidence": "OCR confidence score (0-1)",
+      "roi_image": "Region of interest image"
+    },
+    "puc_status": {
+      "vehicle_number": "Normalized registration number",
+      "found": "Boolean - vehicle in database",
+      "status": "Valid | Expired | Grace Period | Not Found",
+      "days_remaining": "Integer - days until/since expiry",
+      "in_grace_period": "Boolean - within grace period",
+      "vehicle_data": "Full vehicle record if found"
+    }
+  },
+  "future_phases": {
+    "phase_2": {
+      "features": [
+        "Email notification system",
+        "SMS alerts for violations",
+        "Violation logging and tracking",
+        "Grace period management",
+        "Owner-notification integration"
+      ]
+    },
+    "phase_3": {
+      "features": [
+        "Analytics dashboard",
+        "Violation escalation mechanism",
+        "Multi-checkpoint coordination",
+        "Real-time monitoring",
+        "Statistical reporting"
+      ]
+    }
+  },
+  "performance": {
+    "processing_time": {
+      "per_image": "1-3 seconds",
+      "per_frame_gpu": "30-100ms",
+      "database_lookup": "<1ms"
+    },
+    "system_requirements": {
+      "cpu": "Intel i5 / AMD Ryzen 5 or equivalent",
+      "ram": "4GB minimum, 8GB recommended",
+      "gpu": "NVIDIA CUDA-capable (optional)",
+      "storage": "2GB for models and database"
+    }
+  },
+  "input_formats_supported": {
+    "images": ["JPG", "JPEG", "PNG", "BMP", "TIFF"],
+    "cameras": ["USB cameras", "Integrated webcams"],
+    "manual_input": "Text entry of number plate"
+  },
+  "number_plate_format": {
+    "example": "MH01AB1234",
+    "components": {
+      "state_code": "MH (Maharashtra, DL, KA, etc.)",
+      "district_code": "01 (1-2 digits)",
+      "registration_letters": "AB (2 letters)",
+      "registration_digits": "1234 (4 digits)"
+    },
+    "notes": "System normalizes various formats (with/without spaces, hyphens, etc.)"
+  },
+  "testing": {
+    "test_script": "test_system.py",
+    "sample_vehicles": {
+      "valid": ["MH02CD5678", "MH03EF9012", "MH05IJ7890"],
+      "expired": ["MH01AB1234", "MH04GH3456", "MH07MN6789"]
+    }
+  }
+}

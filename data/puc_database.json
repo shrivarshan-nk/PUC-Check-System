@@ -1,0 +1,74 @@
+{
+  "vehicles": [
+    {
+      "vehicle_number": "MH01AB1234",
+      "owner_name": "Rajesh Kumar",
+      "puc_expiry_date": "2025-08-15",
+      "owner_contact": "rajesh.kumar@email.com",
+      "status": "Expired"
+    },
+    {
+      "vehicle_number": "MH02CD5678",
+      "owner_name": "Priya Sharma",
+      "puc_expiry_date": "2026-11-30",
+      "owner_contact": "priya.sharma@email.com",
+      "status": "Valid"
+    },
+    {
+      "vehicle_number": "MH03EF9012",
+      "owner_name": "Amit Patel",
+      "puc_expiry_date": "2026-03-20",
+      "owner_contact": "amit.patel@email.com",
+      "status": "Valid"
+    },
+    {
+      "vehicle_number": "MH04GH3456",
+      "owner_name": "Kavya Singh",
+      "puc_expiry_date": "2025-06-10",
+      "owner_contact": "kavya.singh@email.com",
+      "status": "Expired"
+    },
+    {
+      "vehicle_number": "MH05IJ7890",
+      "owner_name": "Sanjay Desai",
+      "puc_expiry_date": "2027-02-28",
+      "owner_contact": "sanjay.desai@email.com",
+      "status": "Valid"
+    },
+    {
+      "vehicle_number": "MH06KL2345",
+      "owner_name": "Aisha Khan",
+      "puc_expiry_date": "2026-09-15",
+      "owner_contact": "aisha.khan@email.com",
+      "status": "Valid"
+    },
+    {
+      "vehicle_number": "MH07MN6789",
+      "owner_name": "Rohan Verma",
+      "puc_expiry_date": "2025-04-05",
+      "owner_contact": "rohan.verma@email.com",
+      "status": "Expired"
+    },
+    {
+      "vehicle_number": "DL08OP0123",
+      "owner_name": "Neha Gupta",
+      "puc_expiry_date": "2026-12-31",
+      "owner_contact": "neha.gupta@email.com",
+      "status": "Valid"
+    },
+    {
+      "vehicle_number": "DL09QR4567",
+      "owner_name": "Vikram Singh",
+      "puc_expiry_date": "2025-07-22",
+      "owner_contact": "vikram.singh@email.com",
+      "status": "Expired"
+    },
+    {
+      "vehicle_number": "KA10ST8901",
+      "owner_name": "Anushka Reddy",
+      "puc_expiry_date": "2026-05-18",
+      "owner_contact": "anushka.reddy@email.com",
+      "status": "Valid"
+    }
+  ]
+}
